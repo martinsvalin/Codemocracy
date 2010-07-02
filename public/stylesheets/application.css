@@ -1,0 +1,193 @@
+	@import url('http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic');
+/*	@font-face { font-family: Chunk; src: url('Chunk.otf'); }*/
+
+	html, 
+	body { 
+		background-color: #EADDD5;
+		margin: 0; padding: 0;
+		font-family: Nobile, Helvetica, Arial, serif;
+		font-size: 18pt;
+		line-height: 24pt;
+		height: 100%;
+	}
+
+	#wrapper {
+		min-height: 100%;
+		position: relative;		
+	}
+
+	h2, h3, h4, h5, h6 { color: #D4501F; }
+	h2 a, h3 a, h4 a, h5 a, h6 a { text-decoration: underline; }
+	h2 { font-size: 36pt; line-height: 36pt; }
+	h3 { font-size: 24pt; line-height: 24pt; margin: 0.1em 0; padding: 1em 0 0 0; }
+
+	a, 
+	a:visited { text-decoration: none; color: #D4501F; }
+	a:hover { text-decoration: underline; }
+
+	blockquote {
+		display: block;
+		padding-left: 1em;
+		font-size: 14pt;
+	}
+
+	.clear { clear: both;}
+
+	/* CODEMOCRACY color styling
+	------------------------------ */
+	.co { color: #FBFF00; }
+	.de { color: #0F0; }
+	.mocracy { color: #008FFF; }
+
+	header .co { text-shadow: #FBFF00 0px 0px 10px; }
+	header .de { text-shadow: #0F0 0px 0px 10px; }
+	header .mocracy { text-shadow: #008FFF 0px 0px 10px; }
+
+	#sponsors .co,
+	#sponsors .de,
+	#sponsors .mocracy {
+		text-transform: uppercase; 
+		font-family: Chunk, Tahoma, Geneva, sans-serif; 
+	}
+
+	/*	TODO: remove this? It's just too much. */
+	.section .co,
+	.section .de,
+	.section .mocracy { text-shadow: black 1px 1px 0px; }
+
+	/*  HEADER
+	------------ */
+
+	header, 
+	header h1, 
+	header p { margin: 0; padding: 0; }
+
+	header {
+		display: block;
+		width: 100%;
+		height: 7em;
+		text-align: center;
+/*		background-color: black;*/
+		background-color: #002;
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(black), color-stop(0.35, #002), color-stop(0.35, #002), to(#668));
+		background-image: -moz-linear-gradient(top, black, #002 40%, #668);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000FF, endColorstr=#666688FF);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000FF, endColorstr=#666688FF)";
+		border-bottom: 1px solid #002;
+	}
+	header h1 { 
+		color: #D4501F;
+		font-family: Chunk, Tahoma, Geneva, sans-serif;
+		font-size: 72pt;
+		font-weight: bold;
+		line-height: 72pt;
+		height: 72pt;
+		text-transform: uppercase;
+	}
+
+	header p {
+		color: white;
+		padding-left: 12em; 
+		font-size: 24pt;
+		height: 36pt;
+		line-height: 24pt;
+		overflow: hidden;
+		text-shadow: white 0px 0px 5px;
+	}
+	header a, 
+	header a:visited { 
+		color: white; 
+		text-decoration: underline; 
+	}
+
+	/*	NAVIGATION
+	---------------- */
+	nav { height: 0; }
+
+	nav ul {
+		position: relative;
+		top: -4pt;
+		text-align: left; 
+		width: 35em;
+		margin: 0 auto;
+		padding: 0;
+	}
+
+	nav li {
+		display: inline;
+		padding-right: 2em;
+		font-size: 14pt;
+		line-height: 18pt;
+		font-weight: bold;
+		/*		text-shadow: white 0px 0px 5px;*/
+	}
+
+	nav a, 
+	nav a:visited { color: #D4501F; }
+	nav a:hover { color: white; }
+	nav a.selected { color: white; }
+
+	/*	MAIN CONTENT AREA
+	----------------------- */
+	#content {
+		width: 35em;
+		margin: 0 auto;
+		padding-bottom: 4em; /* height of #footer */
+	}
+
+	.section, div.item {
+		margin: 0;
+		padding: 0;
+		clear: both;
+	}
+
+	label { display: block; }
+	input, textarea { font-size: 18pt; margin-bottom: 0.2em; width: 16em; }
+	input.submit { 
+		display: block;
+		width: 35em;
+		border: 1px solid gray;
+		background-color: #afa;
+		cursor: pointer;
+	}
+
+	#registration form {
+		width: 16em;
+		float: left;
+	}
+	#registration .explanation {
+		width: 16em;
+		float: right;
+		margin: 0;
+	}
+
+	#details .personal_information { float: left; width: 16em; margin-right: 1em;}
+	#details .team_information { float: right; width: 16em; margin-left: 1em;}
+
+	.inspiration.item p.by { font-size: 10pt; }
+	.inspiration.item img, .inspiration p.by { width: 500px; height: auto; }
+	.inspiration.item:nth-child(odd) img,
+	.inspiration.item:nth-child(odd) p.by { float: left; margin: 0.5em 0; }
+	.inspiration.item:nth-child(odd) blockquote,
+	.inspiration.item:nth-child(odd) p { margin-left: 510px; }
+	.inspiration.item:nth-child(even) img,
+	.inspiration.item:nth-child(even) p.by { float: right; margin: 0.5em 0; }
+	.inspiration.item:nth-child(even) blockquote,
+	.inspiration.item:nth-child(even) p { margin-right: 510px; }
+
+	/*	FOOTER
+	-------------- */
+	#footer {
+		height: 4em;
+		background-color: black;
+		color: white;
+		width: 100%;
+		position:absolute;
+		bottom:0;
+	}
+	#sponsors { 
+		width: 35em; 
+		padding-top: 0.3em;
+		margin: 0 auto;
+	}
+	#sponsors h2 { margin: 0; font-size: 24pt;}
