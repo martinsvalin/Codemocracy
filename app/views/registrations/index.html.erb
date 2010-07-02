@@ -3,27 +3,17 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Email</th>
-    <th>Phone</th>
     <th>Twitter</th>
-    <th>Teamname</th>
-    <th>Idea</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @registrations.each do |registration| %>
   <tr>
     <td><%= registration.name %></td>
-    <td><%= registration.email %></td>
-    <td><%= registration.phone %></td>
     <td><%= registration.twitter %></td>
-    <td><%= registration.teamname %></td>
-    <td><%= registration.idea %></td>
-    <td><%= link_to 'Show', registration %></td>
+    <!-- <td><%# link_to 'Show', registration %></td> -->
     <td><%= link_to 'Edit', edit_registration_path(registration) %></td>
-    <td><%= link_to 'Destroy', registration, :confirm => 'Are you sure?', :method => :delete %></td>
+    <!-- <td><%# link_to 'Destroy', registration, :confirm => 'Are you sure?', :method => :delete %></td> -->
   </tr>
 <% end %>
 </table>

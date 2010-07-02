@@ -1,0 +1,48 @@
+<%= form_for(@registration) do |f| %>
+	<% if @registration.errors.any? %>
+	<div id="error_explanation">
+		<h2><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
+
+		<ul>
+		<% @registration.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+	</div>
+	<% end %>
+
+	<div class="personal_information field">
+		<h3>Om dig</h3>
+		<p>
+			<%= f.label :email, "E-post	:" %>
+			<%= f.text_field :email, :placeholder => "E-postadress" %>
+		</p>
+		<p>
+			<%= f.label :name, "Namn:" %>
+			<%= f.text_field :name, :placeholder => "För- och efternamn" %>
+		</p>
+		<p>
+			<%= f.label :phone, "Telefon:" %>
+			<%= f.text_field :phone, :placeholder => "Telefonnummer" %>
+		</p>
+		<p>
+			<%= f.label :twitter, "Twitter:" %>
+			<%= f.text_field :twitter, :placeholder => "@twitter-namn" %>
+		</p>
+	</div>
+	<div class="team_information field">
+		<h3>Om ditt lag och din idé</h3>
+		<p>
+			<%= f.label :teamname, "Lagnamn (om ni är flera):" %>
+			<%= f.text_field :teamname, :placeholder => "Lagnamn (ange samma)" %>
+		</p>
+		<p>
+			<%= f.label :idea, "Berätta om er idé, och om ni behöver något särskilt för att genomföra den:" %>
+			<%= f.text_area :idea, :rows => 4, :placeholder => "Vi vill bygga&hellip; Vi skulle behöva någon som kan&hellip;" %>
+		</p>
+	</div>
+	
+	<div class="actions">
+		<%= f.submit "spara", :class => "submit" %>	
+	</div>
+<% end %>
