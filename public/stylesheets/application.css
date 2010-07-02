@@ -114,9 +114,9 @@
 
 	nav li {
 		display: inline;
-		padding-right: 2em;
-		font-size: 14pt;
-		line-height: 18pt;
+		padding-right: 1.5em;
+		font-size: 12pt;
+		line-height: 14pt;
 		font-weight: bold;
 		/*		text-shadow: white 0px 0px 5px;*/
 	}
