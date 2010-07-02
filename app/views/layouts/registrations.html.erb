@@ -5,13 +5,7 @@
 	<title>Codemocracy</title>
 	<style type="text/css" media="screen">
 	@import url('http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic');
-	/*	@font-face { font-family: Chunk; src: url('Chunk.otf'); }*/
-
-	.clear { clear: both;}
-
-	a, 
-	a:visited { text-decoration: none; color: #D4501F; }
-	a:hover { text-decoration: underline; }
+	@font-face { font-family: Chunk; src: url('Chunk.otf'); }
 
 	html, 
 	body { 
@@ -25,20 +19,25 @@
 
 	#wrapper {
 		min-height: 100%;
-		height: auto !important;
-		height: 100%;
-		margin: 0 auto -4em;
-	}
-	#footer, #push {
-		height: 4em;
+		position: relative;		
 	}
 
+	h2, h3, h4, h5, h6 { color: #D4501F; }
+	h2 a, h3 a, h4 a, h5 a, h6 a { text-decoration: underline; }
+	h2 { font-size: 36pt; line-height: 36pt; }
+	h3 { font-size: 24pt; line-height: 24pt; margin: 0.1em 0; padding: 1em 0 0 0; }
+
+	a, 
+	a:visited { text-decoration: none; color: #D4501F; }
+	a:hover { text-decoration: underline; }
 
 	blockquote {
 		display: block;
 		padding-left: 1em;
 		font-size: 14pt;
 	}
+
+	.clear { clear: both;}
 
 	/* CODEMOCRACY color styling
 	------------------------------ */
@@ -136,18 +135,17 @@
 
 	/*	MAIN CONTENT AREA
 	----------------------- */
-
-	div.section, div.item {
+	#content {
 		width: 35em;
 		margin: 0 auto;
+		padding-bottom: 4em; /* height of #footer */
+	}
+
+	.section, div.item {
+		margin: 0;
 		padding: 0;
 		clear: both;
 	}
-
-	h2, h3, h4, h5, h6 { color: #D4501F; }
-	h2 a, h3 a, h4 a, h5 a, h6 a { text-decoration: underline; }
-	h2 { font-size: 36pt; line-height: 36pt; }
-	h3 { font-size: 24pt; line-height: 24pt; margin: 0.1em 0; padding: 1em 0 0 0; }
 
 	label { display: block; }
 	input, textarea { font-size: 18pt; margin-bottom: 0.2em; width: 16em; }
@@ -185,12 +183,15 @@
 
 	/*	FOOTER
 	-------------- */
-	#sponsors {
-		margin-top: 5em;
+	#footer {
+		height: 4em;
 		background-color: black;
 		color: white;
+		width: 100%;
+		position:absolute;
+		bottom:0;
 	}
-	#sponsors > div { 
+	#sponsors { 
 		width: 35em; 
 		padding-top: 0.3em;
 		margin: 0 auto;
@@ -199,41 +200,43 @@
 	</style>
 </head>
 <body>
-	<header>
-		<h1><span class="co">Co</span><span class="de">de</span><span class="mocracy">mocracy</span></h1>
-		<p>
-			4&mdash;5&nbsp;sept 
-			@ 
-			<a href="#map">Modul&nbsp;1</a>
-		</p>
-		<nav>
-			<ul>
-				<li><a href="#registration">Anmälan</a></li>
-				<li><a href="#blog">Blogg</a></li>
-				<li><a href="#inspiration">Inspiration</a></li>
-				<li><a href="#gallery">Galleri</a></li>
-				<li><a href="#ideas">Idéer</a></li>
-				<li><a href="#about">Om&nbsp;Codemocracy</a></li>
-			</ul>
-		</nav>
-	</header>
-
 	<div id="wrapper">
+		<header>
+			<h1><span class="co">Co</span><span class="de">de</span><span class="mocracy">mocracy</span></h1>
+			<p>
+				4&mdash;5&nbsp;sept 
+				@ 
+				<a href="#map">Modul&nbsp;1</a>
+			</p>
+			<nav>
+				<ul>
+					<li><a href="#registration">Anmälan</a></li>
+					<!-- <li><a href="#blog">Blogg</a></li> -->
+					<!-- <li><a href="#inspiration">Inspiration</a></li> -->
+					<!-- <li><a href="#gallery">Galleri</a></li> -->
+					<!-- <li><a href="#ideas">Idéer</a></li> -->
+					<li><a href="#about">Om&nbsp;Codemocracy</a></li>
+				</ul>
+			</nav>
+		</header>
 
-		<%= yield %>
+		<div id="content">
 
-		<div id="push" class="clear"></div>
-	</div>
+			<%= yield %>
 
-	<div id="footer">
-		<div id="sponsors" class="aside">
-			<div>
-				<h2><span class="co">Co</span><span class="de">de</span><span class="mocracy">mocracy</span> görs möjligt av:</h2>
+			<div class="clear">&nbsp;</div>
+		</div>
+
+		<div id="footer">
+			<div id="sponsors" class="aside">
+				<h2>
+					<span class="co">Co</span><span class="de">de</span><span class="mocracy">mocracy</span> görs möjligt av:
+				</h2>
 				<a href="http://www.modul1.se">Modul&nbsp;1</a>
 			</div>
 		</div>
 	</div>
-
+	
 	<script src="http://www.google.com/jsapi" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
 	google.load("jquery", "1");
