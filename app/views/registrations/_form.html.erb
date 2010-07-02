@@ -12,28 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :twitter %><br />
-    <%= f.text_field :twitter %>
-  </div>
-  <div class="field">
-    <%= f.label :teamname %><br />
-    <%= f.text_field :teamname %>
-  </div>
-  <div class="field">
-    <%= f.label :idea %><br />
-    <%= f.text_area :idea %>
+    <%= f.label :email, "E-post" %><br />
+    <%= f.email_field :email, :placeholder => "E-postadress" %>
   </div>
   <div class="actions">
     <%= f.submit %>
