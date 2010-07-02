@@ -8,7 +8,11 @@
 <body>
 	<div id="wrapper">
 		<header>
-			<h1><span class="co">Co</span><span class="de">de</span><span class="mocracy">mocracy</span></h1>
+			<h1>
+				<%= link_to root_url do %>
+				<span class="co">Co</span><span class="de">de</span><span class="mocracy">mocracy</span>
+				<% end %>
+			</h1>
 			<p id="time_and_date">
 				4&mdash;5&nbsp;sept 
 				@ 
@@ -16,11 +20,9 @@
 			</p>
 			<nav>
 				<ul>
-					<li><a href="#registration">Anmälan</a></li>
-					<!-- <li><a href="#blog">Blogg</a></li> -->
-					<!-- <li><a href="#inspiration">Inspiration</a></li> -->
-					<!-- <li><a href="#gallery">Galleri</a></li> -->
-					<!-- <li><a href="#ideas">Idéer</a></li> -->
+					<li><%= link_to "Anmälan", new_registration_path %></li>
+					<li><a href="#program">Program</a></li>
+					<li><a href="#inspiration">Inspiration</a></li>
 					<li><a href="#about">Om&nbsp;Codemocracy</a></li>
 				</ul>
 			</nav>
@@ -43,38 +45,5 @@
 		</div>
 	</div>
 	
-	<script src="http://www.google.com/jsapi" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript" charset="utf-8">
-	google.load("jquery", "1");
-
-	google.setOnLoadCallback(function() {
-
-		var sections = $('.section');
-		var tablinks = $('nav a');
-		var initial_tablink; 
-
-		// Check for #hash in url, so we can click the appropriate link
-		// if (window.location.hash) {
-		//  tablinks.each(function() {
-		//      if(this.hash == window.location.hash) {
-		//          initial_tablink = $(this);
-		//      }
-		//  });
-		// }
-		// if (initial_tablink == undefined) {
-		//  initial_tablink = tablinks.filter(':first');
-		// }
-
-		tablinks.click(function() {
-			sections.hide();
-			sections.filter(this.hash).show();
-			tablinks.removeClass('selected');
-			$(this).addClass('selected');
-			return false;
-		}).filter(':first').click();
-		// initial_tablink.click();
-
-	});
-	</script>
 </body>
 </html>
