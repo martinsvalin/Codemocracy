@@ -10,16 +10,16 @@ class RegistrationsController < ApplicationController
     end
   end
 
-  # GET /registrations/1
-  # GET /registrations/1.xml
-  def show
-    @registration = Registration.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @registration }
-    end
-  end
+  # # GET /registrations/1
+  # # GET /registrations/1.xml
+  # def show
+  #   @registration = Registration.find(params[:id])
+  # 
+  #   respond_to do |format|
+  #     format.html # show.html.erb
+  #     format.xml  { render :xml => @registration }
+  #   end
+  # end
 
   # GET /registrations/new
   # GET /registrations/new.xml
@@ -44,7 +44,7 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.save
-        format.html { redirect_to(@registration, :notice => 'Registration was successfully created.') }
+        format.html { redirect_to(edit_registration_path(@registration), :notice => 'You registered successfully.') }
         format.xml  { render :xml => @registration, :status => :created, :location => @registration }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.update_attributes(params[:registration])
-        format.html { redirect_to(@registration, :notice => 'Registration was successfully updated.') }
+        format.html { redirect_to(@registration, :notice => 'Registration details saved.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -69,15 +69,15 @@ class RegistrationsController < ApplicationController
     end
   end
 
-  # DELETE /registrations/1
-  # DELETE /registrations/1.xml
-  def destroy
-    @registration = Registration.find(params[:id])
-    @registration.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(registrations_url) }
-      format.xml  { head :ok }
-    end
-  end
+  # # DELETE /registrations/1
+  # # DELETE /registrations/1.xml
+  # def destroy
+  #   @registration = Registration.find(params[:id])
+  #   @registration.destroy
+  # 
+  #   respond_to do |format|
+  #     format.html { redirect_to(registrations_url) }
+  #     format.xml  { head :ok }
+  #   end
+  # end
 end

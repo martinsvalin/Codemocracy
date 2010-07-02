@@ -1,5 +1,5 @@
 Codemocracy::Application.routes.draw do |map|
-  resources :registrations
+  resources :registrations, :except => [:show, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
