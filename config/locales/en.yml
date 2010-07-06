@@ -14,6 +14,11 @@ en:
     errors:
       messages:
         blank: "is required"
+      models:
+        registration:
+          attributes:
+            email:
+              invalid: "must be an email address"
 
 # Custom translation keys for views
   common:

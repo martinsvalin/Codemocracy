@@ -20,6 +20,11 @@ sv:
     errors:
       messages:
         blank: "måste anges"
+      models:
+        registration:
+          attributes:
+            email:
+              invalid: "måste vara en e-postadress"
 
 # Custom translation keys for views
   common:
