@@ -14,20 +14,24 @@
 	<div class="personal_information field">
 		<h3>Om dig</h3>
 		<p>
-			<%= f.label :email, "E-post	:" %>
-			<%= f.text_field :email, :placeholder => "E-postadress" %>
-		</p>
-		<p>
-			<%= f.label :name, "Namn:" %>
+			<%= f.label :name %>
 			<%= f.text_field :name, :placeholder => "För- och efternamn" %>
 		</p>
 		<p>
-			<%= f.label :phone, "Telefon:" %>
-			<%= f.text_field :phone, :placeholder => "Telefonnummer" %>
+			<%= f.label :email %>
+			<%= f.text_field :email, :placeholder => "E-postadress" %>
 		</p>
 		<p>
-			<%= f.label :twitter, "Twitter:" %>
+			<%= f.label :phone %>
+			<%= f.telephone_field :phone, :placeholder => "Telefonnummer" %>
+		</p>
+		<p>
+			<%= f.label :twitter %>
 			<%= f.text_field :twitter, :placeholder => "@twitter-namn" %>
+		</p>
+		<p>
+			<%= f.label :homepage %>
+			<%= f.url_field :homepage, :placeholder => "http://www.example.com" %>
 		</p>
 	</div>
 	<div class="team_information field">
