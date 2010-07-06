@@ -1,14 +1,6 @@
 <%= form_for(@registration) do |f| %>
 	<% if @registration.errors.any? %>
-	<div id="error_explanation">
-		<h3><%= pluralize(@registration.errors.count, "error") %>:</h3>
-
-		<ul>
-		<% @registration.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-		</ul>
-	</div>
+		<%= render :partial => 'form_errors', :locals => { :errors => @registration.errors } %>
 	<% end %>
 
 	<div class="personal_information field">

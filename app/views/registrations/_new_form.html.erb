@@ -1,23 +1,15 @@
 <%= form_for(@registration) do |f| %>
-  <% if @registration.errors.any? %>
-    <div id="error_explanation">
-      <h3><%= pluralize(@registration.errors.count, "error") %>:</h3>
+	<% if @registration.errors.any? %>
+		<%= render :partial => 'form_errors', :locals => { :errors => @registration.errors } %>
+	<% end %>
 
-      <ul>
-      <% @registration.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, :placeholder => t(:"registration.placeholder.name") %>
-    <%= f.label :email %>
-    <%= f.email_field :email, :placeholder => t(:"registration.placeholder.email") %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<div class="field">
+		<%= f.label :name %>
+		<%= f.text_field :name, :placeholder => t(:"registration.placeholder.name") %>
+		<%= f.label :email %>
+		<%= f.email_field :email, :placeholder => t(:"registration.placeholder.email") %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
 <% end %>
