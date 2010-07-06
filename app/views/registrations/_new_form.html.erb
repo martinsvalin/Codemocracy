@@ -1,7 +1,7 @@
 <%= form_for(@registration) do |f| %>
   <% if @registration.errors.any? %>
     <div id="error_explanation">
-      <h3><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h3>
+      <h3><%= pluralize(@registration.errors.count, "error") %>:</h3>
 
       <ul>
       <% @registration.errors.full_messages.each do |msg| %>

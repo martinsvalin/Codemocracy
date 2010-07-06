@@ -1,7 +1,8 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
+  
+# Rails built-in or dynamically generated translation keys
   helpers:
     label:
       registration:
@@ -13,6 +14,19 @@ en:
     errors:
       messages:
         blank: "is required"
+
+# Custom translation keys for views
+  common:
+    codemocracy_date_short: "<nobr>Sept 4&mdash;5</nobr>"
+    codemocracy_date_long: "September <nobr>4&mdash;5</nobr>"
+  layout:
+    nav:
+      register: "Register"
+      program: "Program"
+      inspiration: "Inspiration"
+      about: "About&nbsp;Codemocracy"
+    footer:
+      made_possible_by: "is made possible by"
   registration:
     placeholder:
       name: "First and last name"
@@ -22,7 +36,16 @@ en:
       homepage: "http://www.example.com"
       teamname: "Team name (same for all members)"
       idea: "We want to build&hellip; We could use someone who&hellip;"
-    details:
+    new:
+      header:
+        register: "Register for Codemocracy!"
+        welcome: "All are welcome"
+      explanation: >
+        Do you want to hack and build stuff? Or listen, learn and discuss how we can 
+        open up Swedish data sources?<br />
+        
+        Welcome to Codemocracy on {{date}}.
+    edit:
       header:
         about_you: "You"
         about_team_and_idea: "Your team and idea"

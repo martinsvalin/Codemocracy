@@ -14,16 +14,16 @@
 				<% end %>
 			</h1>
 			<p id="time_and_date">
-				4&mdash;5&nbsp;sept 
+				<%= safe_t :"common.codemocracy_date_short" %> 
 				@ 
 				<a href="#map">Modul&nbsp;1</a>
 			</p>
 			<nav>
 				<ul>
-					<li><%= link_to "Anmälan", new_registration_path %></li>
-					<li><a href="#program">Program</a></li>
-					<li><a href="#inspiration">Inspiration</a></li>
-					<li><a href="#about">Om&nbsp;Codemocracy</a></li>
+					<li><%= link_to t(:"layout.nav.register"), new_registration_path %></li>
+					<li><a href="#program"><%= t(:"layout.nav.program") %></a></li>
+					<li><a href="#inspiration"><%= t(:"layout.nav.inspiration") %></a></li>
+					<li><a href="#about"><%= safe_t(:"layout.nav.about") %></a></li>
 				</ul>
 			</nav>
 		</header>
@@ -38,7 +38,8 @@
 		<div id="footer">
 			<div id="sponsors" class="aside">
 				<h2>
-					<span class="co">Co</span><span class="de">de</span><span class="mocracy">mocracy</span> görs möjligt av:
+					<span class="co">Co</span><span class="de">de</span><span class="mocracy">mocracy</span> 
+					<%= t :"layout.footer.made_possible_by" %>:
 				</h2>
 				<a href="http://www.modul1.se">Modul&nbsp;1</a>
 			</div>
