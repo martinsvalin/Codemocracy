@@ -1,7 +1,7 @@
 <%= form_for(@registration) do |f| %>
 	<% if @registration.errors.any? %>
 	<div id="error_explanation">
-		<h2><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
+		<h3><%= pluralize(@registration.errors.count, "error") %>:</h3>
 
 		<ul>
 		<% @registration.errors.full_messages.each do |msg| %>
@@ -12,41 +12,41 @@
 	<% end %>
 
 	<div class="personal_information field">
-		<h3>Om dig</h3>
+		<h3><%= t :"registration.details.header.about_you" %></h3>
 		<p>
 			<%= f.label :name %>
-			<%= f.text_field :name, :placeholder => "För- och efternamn" %>
+			<%= f.text_field :name, :placeholder => t(:"registration.placeholder.name") %>
 		</p>
 		<p>
 			<%= f.label :email %>
-			<%= f.text_field :email, :placeholder => "E-postadress" %>
+			<%= f.text_field :email, :placeholder => t(:"registration.placeholder.email") %>
 		</p>
 		<p>
 			<%= f.label :phone %>
-			<%= f.telephone_field :phone, :placeholder => "Telefonnummer" %>
+			<%= f.telephone_field :phone, :placeholder => t(:"registration.placeholder.phone") %>
 		</p>
 		<p>
 			<%= f.label :twitter %>
-			<%= f.text_field :twitter, :placeholder => "@twitter-namn" %>
+			<%= f.text_field :twitter, :placeholder => t(:"registration.placeholder.twitter") %>
 		</p>
 		<p>
 			<%= f.label :homepage %>
-			<%= f.url_field :homepage, :placeholder => "http://www.example.com" %>
+			<%= f.url_field :homepage, :placeholder => t(:"registration.placeholder.homepage") %>
 		</p>
 	</div>
 	<div class="team_information field">
-		<h3>Om ditt lag och din idé</h3>
+		<h3><%= t :"registration.details.header.about_team_and_idea" %></h3>
 		<p>
-			<%= f.label :teamname, "Lagnamn (om ni är flera):" %>
-			<%= f.text_field :teamname, :placeholder => "Lagnamn (ange samma)" %>
+			<%= f.label :teamname %>
+			<%= f.text_field :teamname, :placeholder => t(:"registration.placeholder.teamname") %>
 		</p>
 		<p>
-			<%= f.label :idea, "Berätta om er idé, och om ni behöver något särskilt för att genomföra den:" %>
-			<%= f.text_area :idea, :rows => 4, :placeholder => "Vi vill bygga&hellip; Vi skulle behöva någon som kan&hellip;" %>
+			<%= f.label :idea %>
+			<%= f.text_area :idea, :rows => 5, :placeholder => t(:"registration.placeholder.idea") %>
 		</p>
 	</div>
 	
 	<div class="actions">
-		<%= f.submit "spara", :class => "submit" %>	
+		<%= f.submit :class => "submit" %>	
 	</div>
 <% end %>

@@ -2,4 +2,27 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  helpers:
+    label:
+      registration:
+        phone: "Phone number"
+        homepage: "Home page"
+        teamname: "Team name"
+        idea: "Tell us about your idea, and if you need any help to realize it"
+  activerecord:
+    errors:
+      messages:
+        blank: "is required"
+  registration:
+    placeholder:
+      name: "First and last name"
+      email: "Email address"
+      phone: "Phone number"
+      twitter: "@yourtwittername"
+      homepage: "http://www.example.com"
+      teamname: "Team name (same for all members)"
+      idea: "We want to build&hellip; We could use someone who&hellip;"
+    details:
+      header:
+        about_you: "You"
+        about_team_and_idea: "Your team and idea"

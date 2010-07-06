@@ -12,3 +12,23 @@ sv:
         name: "Namn"
         email: "E-post"
         phone: "Telefon"
+        homepage: "Hemsida"
+        teamname: "Lagnamn"
+        idea: "Berätta om er idé, och om ni behöver någon hjälp för att genomföra den"
+  activerecord:
+    errors:
+      messages:
+        blank: "måste anges"
+  registration:
+    placeholder:
+      name: "För- och efternamn"
+      email: "E-postadress"
+      phone: "Telefonnummer"
+      twitter: "@twitternamn"
+      homepage: "http://www.example.com"
+      teamname: "Lagnamn (ange samma)"
+      idea: "Vi vill bygga&hellip; Vi skulle behöva någon som kan&hellip;"
+    details:
+      header:
+        about_you: "Om dig"
+        about_team_and_idea: "Om ditt lag och din idé"

@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name, :placeholder => "För- och efternamn" %>
+    <%= f.text_field :name, :placeholder => t(:"registration.placeholder.name") %>
     <%= f.label :email %>
-    <%= f.email_field :email, :placeholder => "E-postadress" %>
+    <%= f.email_field :email, :placeholder => t(:"registration.placeholder.email") %>
   </div>
   <div class="actions">
-    <%= f.submit "Skicka anmälan" %>
+    <%= f.submit %>
   </div>
 <% end %>
