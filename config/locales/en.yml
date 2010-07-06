@@ -52,5 +52,6 @@ en:
         Welcome to Codemocracy on {{date}}.
     edit:
       header:
+        will_you_hack: "Are you going to hack? Tell us!"
         about_you: "You"
         about_team_and_idea: "Your team and idea"

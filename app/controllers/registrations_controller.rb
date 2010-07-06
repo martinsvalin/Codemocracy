@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class RegistrationsController < ApplicationController
   # GET /registrations
   # GET /registrations.xml
@@ -44,6 +45,8 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.save
+        RegistrationMailer.registered(@registration).deliver
+        
         format.html { redirect_to(edit_registration_path(@registration), :notice => 'You registered successfully.') }
         format.xml  { render :xml => @registration, :status => :created, :location => @registration }
       else
@@ -60,7 +63,7 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.update_attributes(params[:registration])
-        format.html { redirect_to(@registration, :notice => 'Registration details saved.') }
+        format.html { redirect_to(edit_registration_path(@registration), :notice => 'Registration details saved.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

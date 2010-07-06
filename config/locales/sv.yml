@@ -58,5 +58,6 @@ sv:
         Välkommen till Codemocracy {{date}}.
     edit:
       header:
+        will_you_hack: "Tänker du hacka? Berätta!"
         about_you: "Om dig"
         about_team_and_idea: "Om ditt lag och din idé"
