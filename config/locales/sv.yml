@@ -55,7 +55,7 @@ sv:
         Vill du hacka och bygga saker? Eller lyssna, lära och diskutera hur vi ska 
         öppna upp svenska datakällor?<br />
         
-        Välkommen till Codemocracy {{date}}.
+        Välkommen till Codemocracy %{date}.
     edit:
       header:
         will_you_hack: "Tänker du hacka? Berätta!"

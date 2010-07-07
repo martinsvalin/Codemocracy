@@ -49,7 +49,7 @@ en:
         Do you want to hack and build stuff? Or listen, learn and discuss how we can 
         open up Swedish data sources?<br />
         
-        Welcome to Codemocracy on {{date}}.
+        Welcome to Codemocracy on %{date}.
     edit:
       header:
         will_you_hack: "Are you going to hack? Tell us!"
