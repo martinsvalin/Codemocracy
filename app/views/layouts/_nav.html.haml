@@ -7,4 +7,4 @@
 		%li<
 			%a{:href => "#inspiration"}= t :"layout.nav.inspiration"
 		%li<
-			%a{:href => about_path}= safe_t :"layout.nav.about"
+			%a{:href => about_path}!= t :"layout.nav.about"

@@ -3,6 +3,6 @@
 	
 	.explanation
 		%h3= t :"registration.new.header.welcome"
-		%p= safe_t :"registration.new.explanation", :date => t(:"common.codemocracy_date_long")
+		%p!= t :"registration.new.explanation", :date => t(:"common.codemocracy_date_long")
 	
 	= render 'new_form'
