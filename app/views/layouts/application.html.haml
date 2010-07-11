@@ -1,0 +1,22 @@
+!!!
+%html
+	%head
+		%meta{:charset => "utf-8"}
+		%meta{:author => 'Martin Svalin (http://lite.nu)'}
+		%title Codemocracy
+		= stylesheet_link_tag "application.css"
+	%body
+		#wrapper
+			%header
+				= render :partial => "layouts/header"
+				= render :partial => "layouts/nav"
+		
+			#content
+				= render :partial => "layouts/flash", :locals => { :flash => flash } if flash.any?
+
+				= yield
+
+				.clear &nbsp;
+		
+			#footer
+				= render :partial => "layouts/sponsors"

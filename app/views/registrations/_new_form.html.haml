@@ -1,0 +1,10 @@
+- form_for(@registration) do |f|
+	= render :partial => 'form_errors', :locals => { :errors => @registration.errors } if @registration.errors.any?
+
+	.field
+		= f.label :name
+		= f.text_field :name, :placeholder => t(:"registration.placeholder.name")
+		= f.label :email
+		= f.email_field :email, :placeholder => t(:"registration.placeholder.email")
+	.actions
+		= f.submit

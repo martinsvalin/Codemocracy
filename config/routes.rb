@@ -1,5 +1,9 @@
 Codemocracy::Application.routes.draw do |map|
-  resources :registrations, :except => [:show, :destroy]
+  resources :registrations, :except => [:show, :destroy, :index]
+  match 'registrations' => "registrations#new"
+  match 'program' => 'info#program', :as => :program
+  match 'about' => 'info#about', :as => :about
+  root :to => "registrations#new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -50,7 +54,6 @@ Codemocracy::Application.routes.draw do |map|
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "registrations#new"
 
   # See how all your routes lay out with "rake routes"
 

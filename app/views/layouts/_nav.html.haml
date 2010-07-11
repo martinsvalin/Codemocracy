@@ -1,0 +1,10 @@
+%nav
+	%ul
+		%li
+			%a{:href => new_registration_path}= t :"layout.nav.register"
+		%li
+			%a{:href => program_path}= t :"layout.nav.program"
+		%li
+			%a{:href => "#inspiration"}= t :"layout.nav.inspiration"
+		%li
+			%a{:href => about_path}= safe_t :"layout.nav.about"

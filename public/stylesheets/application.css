@@ -187,6 +187,8 @@
 	.inspiration.item:nth-child(even) blockquote,
 	.inspiration.item:nth-child(even) p { margin-right: 510px; }
 
+	table { border-spacing: 10pt; }
+
 	/*	FOOTER
 	-------------- */
 	#footer {
