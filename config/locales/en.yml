@@ -22,8 +22,8 @@ en:
 
 # Custom translation keys for views
   common:
-    codemocracy_date_short: "<nobr>Sept 4&mdash;5</nobr>"
-    codemocracy_date_long: "September <nobr>4&mdash;5</nobr>"
+    codemocracy_date_short: '<span class="nobr">Sept 4&mdash;5</span>'
+    codemocracy_date_long: 'September <span class="nobr">4&mdash;5</span>'
   layout:
     nav:
       register: "Register"

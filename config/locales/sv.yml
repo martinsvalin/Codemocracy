@@ -28,8 +28,8 @@ sv:
 
 # Custom translation keys for views
   common:
-    codemocracy_date_short: "<nobr>4&mdash;5</nobr> sept"
-    codemocracy_date_long: "<nobr>4&mdash;5</nobr> september"
+    codemocracy_date_short: '<span class="nobr">4&mdash;5</span> sept'
+    codemocracy_date_long: '<span class="nobr">4&mdash;5</span> september'
   layout:
     nav:
       register: "Anmälan"
