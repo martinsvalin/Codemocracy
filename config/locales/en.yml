@@ -6,10 +6,17 @@ en:
   helpers:
     label:
       registration:
+        name: "Name"
+        email: "Email"
         phone: "Phone number"
         homepage: "Home page"
         teamname: "Team name"
         idea: "Tell us about your idea, and if you need any help to realize it"
+    submit:
+      registration:
+        create: "Register!"
+        update: "Save"
+    
   activerecord:
     errors:
       messages:
@@ -55,3 +62,9 @@ en:
         will_you_hack: "Are you going to hack? Tell us!"
         about_you: "You"
         about_team_and_idea: "Your team and idea"
+    create:
+      flash:
+        success: 'You registered successfully.'
+    update:
+      flash:
+        success: 'Registration details saved.'

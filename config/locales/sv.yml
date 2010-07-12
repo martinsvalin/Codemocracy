@@ -16,6 +16,10 @@ sv:
         homepage: "Hemsida"
         teamname: "Lagnamn"
         idea: "Berätta om er idé, och om ni behöver någon hjälp för att genomföra den"
+    submit:
+      registration:
+        create: "Registrera dig!"
+        update: "Spara"
   activerecord:
     errors:
       messages:
@@ -61,3 +65,9 @@ sv:
         will_you_hack: "Tänker du hacka? Berätta!"
         about_you: "Om dig"
         about_team_and_idea: "Om ditt lag och din idé"
+    create:
+      flash:
+        success: 'Du är nu registrerad.'
+    update:
+      flash:
+        success: 'Dina uppgifter sparades.'

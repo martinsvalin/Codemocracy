@@ -47,7 +47,7 @@ class RegistrationsController < ApplicationController
       if @registration.save
         RegistrationMailer.registered(@registration).deliver
         
-        format.html { redirect_to(edit_registration_path(@registration), :notice => 'You registered successfully.') }
+        format.html { redirect_to(edit_registration_path(@registration), :notice => t(:"registration.create.flash.success")) }
         format.xml  { render :xml => @registration, :status => :created, :location => @registration }
       else
         format.html { render :action => "new" }
@@ -63,7 +63,7 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.update_attributes(params[:registration])
-        format.html { redirect_to(edit_registration_path(@registration), :notice => 'Registration details saved.') }
+        format.html { redirect_to(edit_registration_path(@registration), :notice => t(:"registration.update.flash.success")) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
