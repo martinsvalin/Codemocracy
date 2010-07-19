@@ -9,14 +9,13 @@
 			%header
 				!= render :partial => "layouts/header"
 				!= render :partial => "layouts/nav"
-		
+
 			#content
 				!= render :partial => "layouts/flash", :locals => { :flash => flash } if flash.any?
-
 				!= yield
 
 				.clear &nbsp;
-		
+
 			#footer
 				!= render :partial => "layouts/sponsors"
 	!= render :partial => "layouts/footer_scripts"
