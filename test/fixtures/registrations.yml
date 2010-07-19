@@ -2,7 +2,7 @@
 
 one:
   name: MyString
-  email: MyString
+  email: my.email@example.com
   phone: MyString
   twitter: MyString
   teamname: MyString
@@ -10,7 +10,7 @@ one:
 
 two:
   name: MyString
-  email: MyString
+  email: my.email@example.com
   phone: MyString
   twitter: MyString
   teamname: MyString

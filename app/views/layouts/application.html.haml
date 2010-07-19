@@ -1,21 +1,28 @@
 !!! 5
 %html
-	%head
-		%meta{:charset => "utf-8"}
-		%title Codemocracy
-		!= stylesheet_link_tag "application.css"
-	%body
-		#wrapper
-			%header
-				!= render :partial => "layouts/header"
-				!= render :partial => "layouts/nav"
+  %head
+    %meta{:charset => "utf-8"}
+    %title Codemocracy
+    != stylesheet_link_tag "application.css"
+    != csrf_meta_tag
+  %body
+    #wrapper
+      %header
+        != render :partial => "layouts/header"
+        != render :partial => "layouts/nav"
 
-			#content
-				!= render :partial => "layouts/flash", :locals => { :flash => flash } if flash.any?
-				!= yield
+      #content
+        - if current_user
+          %p 
+            Hello 
+            = current_user.name
+            = link_to 'Not you?', logout_path, :method => :delete
 
-				.clear &nbsp;
+        != render :partial => "layouts/flash", :locals => { :flash => flash } if flash.any?
+        != yield
 
-			#footer
-				!= render :partial => "layouts/sponsors"
-	!= render :partial => "layouts/footer_scripts"
+        .clear &nbsp;
+
+      #footer
+        != render :partial => "layouts/sponsors"
+    != render :partial => "layouts/footer_scripts"
