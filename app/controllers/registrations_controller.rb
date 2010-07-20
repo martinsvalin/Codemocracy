@@ -1,5 +1,7 @@
 # encoding: UTF-8
 class RegistrationsController < ApplicationController
+  before_filter :set_active_nav, :only => [:index, :new, :edit]
+  
   # GET /registrations
   # GET /registrations.xml
   def index
@@ -83,4 +85,9 @@ class RegistrationsController < ApplicationController
   #     format.xml  { head :ok }
   #   end
   # end
+  
+  private
+    def set_active_nav
+      @active_nav = 'register'
+    end
 end

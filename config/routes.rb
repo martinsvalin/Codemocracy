@@ -3,18 +3,18 @@ Codemocracy::Application.routes.draw do |map|
   resources :users
 
   # UserSession
-  get    'login(.:format)'  => 'user_session#new',     :as => :login
-  post   'login(.:format)'  => 'user_session#create',  :as => :login
-  delete 'logout(.:format)' => 'user_session#destroy', :as => :logout
+  get     'login(.:format)'   => 'user_session#new',      :as => :login
+  post    'login(.:format)'   => 'user_session#create',   :as => :login
+  delete  'logout(.:format)'  => 'user_session#destroy',  :as => :logout
 
   # Registration
+  get 'register' => 'registrations#new', :as => :register
+  root :to => 'registrations#new'
   resources :registrations, :except => [:show, :destroy, :index]
-  root :to => "registrations#new"
   
   # Info
-  get 'registrations' => 'registrations#new'
-  get 'program'       => 'info#program',    :as => :program
-  get 'about'         => 'info#about',      :as => :about
+  get 'program' => 'info#program',  :as => :program
+  get 'about'   => 'info#about',    :as => :about
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

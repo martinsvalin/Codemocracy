@@ -1,8 +1,8 @@
 %nav
   %ul
-    %li<
-      %a{:href => new_registration_path}= t :"layout.nav.register"
-    %li<
-      %a{:href => program_path}= t :"layout.nav.program"
-    %li<
-      %a{:href => about_path}!= t :"layout.nav.about"
+    %li{:class => ("selected" if (@active_nav == 'register'))}<
+      = link_to_unless_current(t(:'layout.nav.register'), root_path) # register_path works also, if we break this into a helper…
+    %li{:class => ("selected" if (@active_nav == 'program'))}<
+      = link_to_unless_current(t(:'layout.nav.program'), program_path)
+    %li{:class => ("selected" if (@active_nav == 'about'))}<
+      = link_to_unless_current(t(:'layout.nav.about').html_safe, about_path)
