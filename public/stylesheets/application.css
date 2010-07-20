@@ -122,11 +122,21 @@ nav li {
 	border-bottom: 1px solid black;
 	padding: 0 1.5em;
 	-webkit-border-radius: 5px 5px 0 0;
+	-mozilla-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
 	font-size: 12pt;
 	line-height: 14pt;
 	font-weight: bold;
-	/*text-shadow: white 0px 0px 5px;*/
+	opacity: 0.9;
 }
+
+nav li:hover { opacity: 1.0;}
+
+nav li.selected { 
+	border-color: #EADDD5; 
+	opacity: 1.0;
+}
+
 
 nav a, 
 nav a:visited,

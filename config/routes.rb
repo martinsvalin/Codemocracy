@@ -1,6 +1,6 @@
 Codemocracy::Application.routes.draw do |map|
   resources :registrations, :except => [:show, :destroy, :index]
-  match 'registrations' => "registrations#new"
+  match 'register' => "registrations#new", :as => :register
   match 'program' => 'info#program', :as => :program
   match 'about' => 'info#about', :as => :about
   root :to => "registrations#new"
