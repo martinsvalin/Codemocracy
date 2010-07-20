@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
 
   private
     def set_locale
-      # if params[:locale] is nil then I18n.default_locale will be used
       I18n.locale = params[:lang]
     end
 
@@ -35,7 +34,7 @@ class ApplicationController < ActionController::Base
       if current_user
         store_location
         flash[:notice] = "You must be logged out to access this page"
-        redirect_to users_url # TODO: change this to the main page
+        redirect_back_or_default root_url
         return false
       end
     end
