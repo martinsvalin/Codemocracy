@@ -25,10 +25,10 @@ describe UsersController do
           assigns(:user).should be(mock_user)
         end
 
-        it "redirects to the created user" do
+        it "redirects to edit the created user" do
           User.stub(:new) { mock_user(:save => true) }
           post :create, :user => {}
-          response.should redirect_to(user_url(mock_user))
+          response.should redirect_to(edit_user_url(mock_user))
         end
       end
 
@@ -53,29 +53,29 @@ describe UsersController do
   describe "when no user is authenticated" do
     it_should_behave_like "an application that can add new users"
     
-    describe "GET index" do
-      it "fails to load" do
-        get :index
-        response.should_not be_success
-      end
+    # describe "GET index" do
+    #   it "fails to load" do
+    #     get :index
+    #     response.should_not be_success
+    #   end
+    # 
+    #   it "redirects to the login page" do
+    #     get :index
+    #     response.should redirect_to(login_url)
+    #   end
+    # end
 
-      it "redirects to the login page" do
-        get :index
-        response.should redirect_to(login_url)
-      end
-    end
-
-    describe "GET show" do
-      it "fails to load" do
-        get :show, :id => "37"
-        response.should_not be_success
-      end
-
-      it "redirects to the login page" do
-        get :show, :id => "37"
-        response.should redirect_to(login_url)
-      end
-    end
+    # describe "GET show" do
+    #   it "fails to load" do
+    #     get :show, :id => "37"
+    #     response.should_not be_success
+    #   end
+    # 
+    #   it "redirects to the login page" do
+    #     get :show, :id => "37"
+    #     response.should redirect_to(login_url)
+    #   end
+    # end
 
     describe "GET edit" do
       it "fails to load" do
@@ -101,17 +101,17 @@ describe UsersController do
       end
     end
 
-    describe "DELETE destroy" do
-      it "fails to load" do
-        delete :destroy, :id => "37"
-        response.should_not be_success
-      end
-
-      it "redirects to the login page" do
-        delete :destroy, :id => "37"
-        response.should redirect_to(login_url)
-      end
-    end
+    # describe "DELETE destroy" do
+    #   it "fails to load" do
+    #     delete :destroy, :id => "37"
+    #     response.should_not be_success
+    #   end
+    # 
+    #   it "redirects to the login page" do
+    #     delete :destroy, :id => "37"
+    #     response.should redirect_to(login_url)
+    #   end
+    # end
   end
 
   describe "when a user is authenticated" do
@@ -122,21 +122,21 @@ describe UsersController do
 
     it_should_behave_like "an application that can add new users"
     
-    describe "GET index" do
-      it "assigns all users as @users" do
-        User.stub(:all) { [mock_user] }
-        get :index
-        assigns(:users).should eq([mock_user])
-      end
-    end
+    # describe "GET index" do
+    #   it "assigns all users as @users" do
+    #     User.stub(:all) { [mock_user] }
+    #     get :index
+    #     assigns(:users).should eq([mock_user])
+    #   end
+    # end
 
-    describe "GET show" do
-      it "assigns the requested user as @user" do
-        User.stub(:find).with("37") { mock_user }
-        get :show, :id => "37"
-        assigns(:user).should be(mock_user)
-      end
-    end
+    # describe "GET show" do
+    #   it "assigns the requested user as @user" do
+    #     User.stub(:find).with("37") { mock_user }
+    #     get :show, :id => "37"
+    #     assigns(:user).should be(mock_user)
+    #   end
+    # end
 
     describe "GET edit" do
       it "assigns the requested user as @user" do
@@ -161,10 +161,10 @@ describe UsersController do
           assigns(:user).should be(mock_user)
         end
 
-        it "redirects to the user" do
+        it "redirects to edit the updated user" do
           User.stub(:find) { mock_user(:update_attributes => true) }
           put :update, :id => "1"
-          response.should redirect_to(user_url(mock_user))
+          response.should redirect_to(edit_user_url(mock_user))
         end
       end
 
@@ -184,18 +184,18 @@ describe UsersController do
 
     end
 
-    describe "DELETE destroy" do
-      it "destroys the requested user" do
-        User.should_receive(:find).with("37") { mock_user }
-        mock_user.should_receive(:destroy)
-        delete :destroy, :id => "37"
-      end
-
-      it "redirects to the users list" do
-        User.stub(:find) { mock_user }
-        delete :destroy, :id => "1"
-        response.should redirect_to(users_url)
-      end
-    end
+    # describe "DELETE destroy" do
+    #   it "destroys the requested user" do
+    #     User.should_receive(:find).with("37") { mock_user }
+    #     mock_user.should_receive(:destroy)
+    #     delete :destroy, :id => "37"
+    #   end
+    # 
+    #   it "redirects to the users list" do
+    #     User.stub(:find) { mock_user }
+    #     delete :destroy, :id => "1"
+    #     response.should redirect_to(users_url)
+    #   end
+    # end
   end
 end

@@ -1,6 +1,6 @@
 Codemocracy::Application.routes.draw do |map|
   # User
-  resources :users
+  resources :users, :except => [:destroy, :show, :index]
 
   # UserSession
   get     'login(.:format)'   => 'user_session#new',      :as => :login

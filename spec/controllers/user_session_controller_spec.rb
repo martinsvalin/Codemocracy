@@ -27,10 +27,10 @@ describe UserSessionController do
           assigns(:user_session).should be(mock_user_session)
         end
 
-        it "redirects to the index page" do
+        it "redirects to the root page" do
           UserSession.stub(:new) { mock_user_session(:save => true) }
           post :create, :user_session => {}
-          response.should redirect_to(users_url)
+          response.should redirect_to(root_url)
         end
       end
 
@@ -86,7 +86,7 @@ describe UserSessionController do
         response.should_not be_success
       end
 
-      it "redirects to the users page" do
+      it "redirects to the root page" do
         post :create
         response.should redirect_to(root_url)
       end
