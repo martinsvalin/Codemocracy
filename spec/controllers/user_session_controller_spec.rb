@@ -76,7 +76,7 @@ describe UserSessionController do
 
       it "redirects to the users page" do
         get :new
-        response.should redirect_to(users_url)
+        response.should redirect_to(root_url)
       end
     end
 
@@ -88,7 +88,7 @@ describe UserSessionController do
 
       it "redirects to the users page" do
         post :create
-        response.should redirect_to(users_url)
+        response.should redirect_to(root_url)
       end
     end
 
