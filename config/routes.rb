@@ -1,20 +1,28 @@
 Codemocracy::Application.routes.draw do |map|
   # User
-  resources :users, :except => [:destroy, :show, :index]
+  resources :users, :only => [:new, :edit, :create, :update]
+  # get     'users/new'         => 'users#new',               :as => :new_user
+  # get     'users/:id/edit'    => 'users#edit',              :as => :edit_user
+  # post    'users'             => 'users#create',            :as => :users
+  # put     'users/:id'         => 'users#update',            :as => :users
 
   # UserSession
-  get     'login(.:format)'   => 'user_session#new',      :as => :login
-  post    'login(.:format)'   => 'user_session#create',   :as => :login
-  delete  'logout(.:format)'  => 'user_session#destroy',  :as => :logout
+  get     'login(.:format)'   => 'user_session#new',        :as => :login
+  post    'login(.:format)'   => 'user_session#create',     :as => :login
+  delete  'logout(.:format)'  => 'user_session#destroy',    :as => :logout
+
+  # Request login
+  get     'email_login'       => 'password_resets#new',     :as => :password_reset
+  post    'email_login'       => 'password_resets#create',  :as => :password_reset
 
   # Registration
-  get 'register' => 'registrations#new', :as => :register
+  get     'register'          => 'registrations#new',       :as => :register
   root :to => 'registrations#new'
-  resources :registrations, :except => [:show, :destroy, :index]
+  resources :registrations, :only => [:new, :edit, :create, :update]
   
   # Info
-  get 'program' => 'info#program',  :as => :program
-  get 'about'   => 'info#about',    :as => :about
+  get     'program'           => 'info#program',            :as => :program
+  get     'about'             => 'info#about',              :as => :about
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -10,9 +10,15 @@ gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => '
 
 group :development, :test do
   gem "rspec-rails", ">= 2.0.0.beta.17"
-  gem 'factory_girl_rails'
 end
 
+group :development do
+  gem 'rails3-generators'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'

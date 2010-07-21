@@ -1,0 +1,6 @@
+%h2 Request login
+%p Enter your email address. A one-time login link will be sent out.
+
+%form{ :action => '/email_login',:method => 'POST'}
+  %label Email
+  %input{ :type => 'email', :name => 'email', :placeholder => 'Email address'}
