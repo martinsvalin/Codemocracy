@@ -1,10 +1,10 @@
 Codemocracy::Application.routes.draw do |map|
   # User
-  resources :users, :only => [:new, :edit, :create, :update]
-  # get     'users/new'         => 'users#new',               :as => :new_user
-  # get     'users/:id/edit'    => 'users#edit',              :as => :edit_user
-  # post    'users'             => 'users#create',            :as => :users
-  # put     'users/:id'         => 'users#update',            :as => :users
+  # resources :users, :only => [:new, :edit, :create, :update]
+  post    'users(.:format)'          => 'users#create',     :as => :users
+  get     'users/new(.:format)'      => 'users#new',        :as => :new_user
+  put     'users/:id(.:format)'      => 'users#update',     :as => :user
+  get     'users/:id/edit(.:format)' => 'users#edit',       :as => :edit_user
 
   # UserSession
   get     'login(.:format)'   => 'user_session#new',        :as => :login
@@ -12,18 +12,23 @@ Codemocracy::Application.routes.draw do |map|
   delete  'logout(.:format)'  => 'user_session#destroy',    :as => :logout
 
   # Request login
-  get     'email_login'       => 'password_resets#new',     :as => :password_reset
-  post    'email_login'       => 'password_resets#create',  :as => :password_reset
+  get     'email_login' => 'password_resets#new',     :as => :password_reset
+  post    'email_login' => 'password_resets#create',  :as => :password_reset
+
+  # Info
+  get     'program' => 'info#program',  :as => :program
+  get     'about'   => 'info#about',    :as => :about
 
   # Registration
-  get     'register'          => 'registrations#new',       :as => :register
-  root :to => 'registrations#new'
-  resources :registrations, :only => [:new, :edit, :create, :update]
-  
-  # Info
-  get     'program'           => 'info#program',            :as => :program
-  get     'about'             => 'info#about',              :as => :about
+  # resources :registrations, :only => [:new, :edit, :create, :update]
+  post    'registrations(.:format)'          => 'registrations#create',     :as => :registrations
+  get     'registrations/new(.:format)'      => 'registrations#new',        :as => :new_registration
+  put     'registrations/:id(.:format)'      => 'registrations#update',     :as => :registration
+  get     'registrations/:id/edit(.:format)' => 'registrations#edit',       :as => :edit_registration
+  get     'register'                         => 'registrations#new',        :as => :register
 
+  root    :to => 'registrations#new'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
