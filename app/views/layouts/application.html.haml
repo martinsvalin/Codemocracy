@@ -16,7 +16,8 @@
           %p 
             Hello 
             = current_user.name
-            = link_to 'Not you?', logout_path, :method => :delete
+            %small
+              = link_to 'Not you?', logout_path, :method => :delete
 
         = render :partial => "layouts/flash", :locals => { :flash => flash } if flash.any?
         = yield

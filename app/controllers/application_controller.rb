@@ -34,7 +34,8 @@ class ApplicationController < ActionController::Base
     def require_no_user
       if current_user
         store_location
-        flash[:notice] = "You must be logged out to access #{session[:return_to]}"
+        flash[:notice] = "You are already logged in. " + 
+          help.link_to("Log out?", logout_path, :method => :delete)
         redirect_to root_url
         return false
       end
@@ -48,5 +49,13 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end
-  
+
+    def help
+      Helper.instance
+    end
+
+    class Helper
+      include Singleton
+      include ActionView::Helpers::UrlHelper
+    end
 end
