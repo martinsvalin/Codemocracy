@@ -21,5 +21,4 @@ class CodemocracyMailer < ActionMailer::Base
       :subject => "Login for Codemocracy"
     )
   end
-  
 end
