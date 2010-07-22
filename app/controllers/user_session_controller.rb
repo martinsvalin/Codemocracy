@@ -19,7 +19,6 @@ class UserSessionController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = "Successfully logged in."
       redirect_to root_path, :format => params[:format]
     else
       render :action => 'new', :format => params[:format]
@@ -31,7 +30,6 @@ class UserSessionController < ApplicationController
   def destroy
     @user_session = UserSession.find
     @user_session.destroy
-    flash[:notice] = "Successfully logged out."
     redirect_to login_path, :format => params[:format]
   end
 end
