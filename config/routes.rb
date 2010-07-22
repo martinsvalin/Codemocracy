@@ -12,8 +12,8 @@ Codemocracy::Application.routes.draw do |map|
   delete  'logout(.:format)'  => 'user_session#destroy',    :as => :logout
 
   # Request login
-  get     'email_login' => 'password_resets#new',     :as => :password_reset
-  post    'email_login' => 'password_resets#create',  :as => :password_reset
+  get     'email_login' => 'password_resets#new',     :as => :password_resets
+  post    'email_login' => 'password_resets#create',  :as => :password_resets
 
   # Info
   get     'program' => 'info#program',  :as => :program

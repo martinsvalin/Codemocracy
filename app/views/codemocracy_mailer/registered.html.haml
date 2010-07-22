@@ -13,7 +13,7 @@
 			= link_to(program_url, program_url) + "."
 		%p
 			Hör av dig till oss om du undrar något. Du når oss på 
-			= link_to(@contact_email, "mailto:" + @contact_email) + "."
+			= mail_to(@contact_email) + "."
 
 		%p Tack för din anmälan. Vi ses 4 september!
-		%p - Martin, Mathias, Pernilla och Gustaf
+		%p - Codemocracy-gänget

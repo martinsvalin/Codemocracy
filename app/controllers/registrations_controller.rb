@@ -47,7 +47,7 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.save
-        RegistrationMailer.registered(@registration).deliver
+        CodemocracyMailer.registered(@registration).deliver
         
         format.html { redirect_to(edit_registration_path(@registration), :notice => t(:"registration.create.flash.success")) }
         format.xml  { render :xml => @registration, :status => :created, :location => @registration }

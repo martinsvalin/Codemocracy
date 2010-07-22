@@ -1,0 +1,19 @@
+!!! 5
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+  %body
+    %h1 
+      Hi,
+    %p
+      You requested a login to Codemocracy. Click the link below to log in.
+      Note that you can only use this link once.
+    %p= link_to(@url, @url)
+    %p
+      If you did not request a login, you can simply ignore this message.
+    %p
+      Contact 
+      = mail_to(@contact_email)
+      if you have any questions.
+    %p Best regards,
+    %p - The Codemocracy team

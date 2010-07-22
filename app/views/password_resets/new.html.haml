@@ -1,6 +1,9 @@
 %h2 Request login
 %p Enter your email address. A one-time login link will be sent out.
 
-%form{ :action => '/email_login',:method => 'POST'}
-  %label Email
-  %input{ :type => 'email', :name => 'email', :placeholder => 'Email address'}
+= form_tag password_resets_path do
+  %p
+    %label Email
+    = email_field_tag "email"
+  %p
+    = submit_tag "Send login link"
