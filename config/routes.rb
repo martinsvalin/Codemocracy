@@ -1,19 +1,21 @@
 Codemocracy::Application.routes.draw do |map|
   # User
   # resources :users, :only => [:new, :edit, :create, :update]
-  post    'users(.:format)'          => 'users#create',     :as => :users
-  get     'users/new(.:format)'      => 'users#new',        :as => :new_user
-  put     'users/:id(.:format)'      => 'users#update',     :as => :user
-  get     'users/:id/edit(.:format)' => 'users#edit',       :as => :edit_user
+  post    'users(.:format)'          => 'users#create',       :as => :users
+  get     'users/new(.:format)'      => 'users#new',          :as => :new_user
+  put     'users/:id(.:format)'      => 'users#update',       :as => :user
+  get     'users/:id/edit(.:format)' => 'users#edit',         :as => :edit_user
 
   # UserSession
-  get     'login(.:format)'   => 'user_session#new',        :as => :login
-  post    'login(.:format)'   => 'user_session#create',     :as => :login
-  delete  'logout(.:format)'  => 'user_session#destroy',    :as => :logout
+  get     'login(.:format)'     => 'user_session#new',        :as => :login
+  post    'login(.:format)'     => 'user_session#create',     :as => :login
+  delete  'logout(.:format)'    => 'user_session#destroy',    :as => :logout
 
   # Request login
-  get     'email_login' => 'password_resets#new',     :as => :password_resets
-  post    'email_login' => 'password_resets#create',  :as => :password_resets
+  get     'email_login'         => 'password_resets#new',     :as => :password_resets
+  post    'email_login'         => 'password_resets#create',  :as => :password_resets
+  post    'email_login/:id'     => 'password_resets#update',  :as => :password_reset
+  get     'email_login/:id'     => 'password_resets#show',    :as => :password_reset
 
   # Info
   get     'program' => 'info#program',  :as => :program

@@ -15,7 +15,7 @@ class CodemocracyMailer < ActionMailer::Base
   def email_login(user)
     @user = user
     @contact_email = "codemocracy@codemocracy.se"
-    @url = root_url(:login => @user.perishable_token)
+    @url = password_reset_url(@user.perishable_token)
     mail(
       :to => user.email,
       :subject => "Login for Codemocracy"

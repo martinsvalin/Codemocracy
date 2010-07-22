@@ -1,6 +1,19 @@
 # encoding: UTF-8
 class PasswordResetsController < ApplicationController
+  before_filter :require_no_user
+
   def new
+  end
+
+  def show
+    find_user_by_token_or_redirect_to_root
+  end
+
+  def update
+    find_user_by_token_or_redirect_to_root
+    @user.save # logs the user in
+    flash[:notice] = "Welcome #{@user.name}, You are now logged in."
+    redirect_to root_url
   end
 
   def create  
@@ -14,4 +27,13 @@ class PasswordResetsController < ApplicationController
       render :action => :new  
     end
   end
+  
+  private
+    def find_user_by_token_or_redirect_to_root
+      @user = User.find_using_perishable_token(params[:id])
+      unless @user
+        flash[:notice] = "Sorry, could not log you in"
+        redirect_to password_resets_path
+      end
+    end
 end
