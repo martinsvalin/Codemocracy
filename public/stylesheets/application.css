@@ -145,6 +145,13 @@ nav a:hover { color: #D4501F; text-decoration: none;}
 
 /*	MAIN CONTENT AREA
 ----------------------- */
+p#login_area {
+	font-size: 10pt;
+	text-align: right;
+	padding: 0;
+	margin: 0;
+}
+
 #content {
 	width: 35em;
 	margin: 0 auto;

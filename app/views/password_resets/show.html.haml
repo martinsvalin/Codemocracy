@@ -1,7 +1,9 @@
 %h2 Is this you?
 %p 
-  If you are
-  = @user.name
-  click the button to log in.
+  Are you
+  = @user.name + "?"
 %p
-  = button_to "Login", :action => :update, :method => :put
+  Click the button to log in.
+%p
+  = button_to("Login", {:action => :update}, :method => :put)
+  

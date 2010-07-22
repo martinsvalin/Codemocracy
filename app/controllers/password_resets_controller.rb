@@ -11,8 +11,8 @@ class PasswordResetsController < ApplicationController
 
   def update
     find_user_by_token_or_redirect_to_root
-    @user.save # logs the user in
-    flash[:notice] = "Welcome #{@user.name}, You are now logged in."
+    @user.login!
+    flash[:notice] = "Welcome #{@user.name}. You are now logged in."
     redirect_to root_url
   end
 

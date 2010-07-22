@@ -14,7 +14,7 @@ Codemocracy::Application.routes.draw do |map|
   # Request login
   get     'email_login'         => 'password_resets#new',     :as => :password_resets
   post    'email_login'         => 'password_resets#create',  :as => :password_resets
-  post    'email_login/:id'     => 'password_resets#update',  :as => :password_reset
+  put     'email_login/:id'     => 'password_resets#update',  :as => :password_reset
   get     'email_login/:id'     => 'password_resets#show',    :as => :password_reset
 
   # Info

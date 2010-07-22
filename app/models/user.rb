@@ -11,5 +11,9 @@ class User < ActiveRecord::Base
   def deliver_password_reset_instructions!  
     reset_perishable_token!  
     CodemocracyMailer.email_login(self).deliver  
-  end  
+  end
+
+  def login!
+    UserSession.create(self)
+  end
 end
