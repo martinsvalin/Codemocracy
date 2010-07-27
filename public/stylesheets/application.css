@@ -45,9 +45,9 @@ header .co { text-shadow: #FBFF00 0px 0px 10px; }
 header .de { text-shadow: #0F0 0px 0px 10px; }
 header .mocracy { text-shadow: #008FFF 0px 0px 10px; }
 
-#sponsors .co,
-#sponsors .de,
-#sponsors .mocracy {
+.co,
+.de,
+.mocracy {
 	text-transform: uppercase; 
 	font-family: Tahoma, Geneva, sans-serif; 
 }
@@ -55,7 +55,7 @@ header .mocracy { text-shadow: #008FFF 0px 0px 10px; }
 /*	TODO: remove this? It's just too much. */
 .section .co,
 .section .de,
-.section .mocracy { text-shadow: black 1px 1px 0px; }
+.section .mocracy { text-shadow: black 1px 1px 0px;}
 
 /*	HEADER
 ------------ */
