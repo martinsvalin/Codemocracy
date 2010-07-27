@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+# Rails 3.0.0.rc depends on bundler 1.0.0.rc.1, which is not available on Heroku as of 2010-07-27
 gem 'rails', '3.0.0.beta4'
 
 # Heroku needs to be loaded for `rake heroku:config` to run, but it causes json_pure to be loaded twice.
