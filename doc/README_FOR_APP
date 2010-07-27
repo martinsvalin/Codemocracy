@@ -1,2 +1,8 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+This is the application to run CODEMOCRACY (http://codemocracy.org, http://codemocracy.se). 
+
+Its purpose is to collect signups for the event (2010-09-04 -- 2010-09-05), market the event and showcase 
+apps and services built during the event.
+
+The app is built using Rails 3 beta 4. It is localized for Swedish and English. It uses Haml for view 
+templates, unobtrusive jQuery for RESTful actions, uses authlogic for authentication and delivers mail 
+via gmail.
