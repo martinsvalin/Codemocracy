@@ -1,4 +1,4 @@
-@import url('http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic');
+/*@import url('http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic');*/
 
 html, 
 body { 
@@ -12,7 +12,9 @@ body {
 
 #wrapper {
 	min-height: 100%;
-	position: relative;		
+	position: relative;
+	border-top: 1px solid #002;
+	z-index: 10;
 }
 
 h2, h3, h4, h5, h6 { color: #D4501F; }
@@ -73,7 +75,7 @@ header {
 	background-image: -moz-linear-gradient(top, black, #002 40%, #668);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000FF, endColorstr=#666688FF);
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000FF, endColorstr=#666688FF)";
-	border-bottom: 1px solid #002;
+/*	border-bottom: 1px solid #002;*/
 }
 header h1 { 
 	color: #D4501F;
@@ -110,17 +112,18 @@ nav { height: 0; }
 nav ul {
 	position: relative;
 	top: -7px;
-	text-align: left; 
 	width: 35em;
 	margin: 0 auto;
 	padding: 0;
+	text-align: left; 
+/*	border: 1px solid black;*/
 }
 
 nav li {
+	position: relative;
 	background-color: #EADDD5;
 	display: inline;
-	border-bottom: 1px solid black;
-	padding: 0 1.5em;
+	padding: 3px 1.5em 7px 1.5em;
 	-webkit-border-radius: 5px 5px 0 0;
 	-mozilla-border-radius: 5px 5px 0 0;
 	border-radius: 5px 5px 0 0;
@@ -128,6 +131,7 @@ nav li {
 	line-height: 14pt;
 	font-weight: bold;
 	opacity: 0.9;
+	z-index: 5;
 }
 
 nav li:hover { opacity: 1.0;}
@@ -135,6 +139,7 @@ nav li:hover { opacity: 1.0;}
 nav li.selected { 
 	border-color: #EADDD5; 
 	opacity: 1.0;
+	z-index: 20;
 }
 
 
