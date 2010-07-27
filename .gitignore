@@ -3,3 +3,5 @@ db/*.sqlite3
 db/schema.rb
 log/*.log
 tmp/**/*
+config/config.yml
+Gemfile.lock
