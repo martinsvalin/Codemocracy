@@ -2,6 +2,10 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0.beta4'
 
+# Heroku needs to be loaded for `rake heroku:config` to run, but it causes json_pure to be loaded twice.
+# Uncomment this line if you need to run `rake heroku:config`.
+# gem 'heroku'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

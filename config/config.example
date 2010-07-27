@@ -1,25 +1,24 @@
 ## This YAML file contains all app-specific configuration
+## It needs a flat structure under each environment, as they are read into Heroku ENV
 
 development:
-  mailer:
-    domain: 'example.com'
-    user_name: 'user@example.com'
-    password: 'secret_password'
+  domain: 'example.com'
+  user_name: 'user@example.com'
+  password: 'secret_password'
   secret_token: 'you_should_generate_a_random_string_of_alphanumeric_characters_and_put_here'
   session_key: '_example_dev_session'
 
 test:
-  mailer:
-    domain: 'example.com'
-    user_name: 'user@example.com'
-    password: 'secret_password'
+  domain: 'example.com'
+  user_name: 'user@example.com'
+  password: 'secret_password'
   secret_token: 'you_should_generate_a_random_string_of_alphanumeric_characters_and_put_here'
   session_key: '_example_test_session'
 
+# Please run `rake heroku:config` if you change production configuration and are deploying on Heroku. 
 production:
-  mailer:
-    domain: 'example.com'
-    user_name: 'user@example.com'
-    password: 'secret_password'
+  domain: 'example.com'
+  user_name: 'user@example.com'
+  password: 'secret_password'
   secret_token: 'you_should_generate_a_random_string_of_alphanumeric_characters_and_put_here'
   session_key: '_example_prod_session'
