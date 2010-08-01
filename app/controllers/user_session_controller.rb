@@ -30,6 +30,6 @@ class UserSessionController < ApplicationController
   def destroy
     @user_session = UserSession.find
     @user_session.destroy
-    redirect_to login_path, :format => params[:format]
+    redirect_to root_path, :format => params[:format]
   end
 end

@@ -1,5 +1,7 @@
 # encoding: UTF-8
 class User < ActiveRecord::Base
+  has_many :registrations
+
   validates :name,  :presence => true
   validates :email, :presence => true, :uniqueness => true #, :email_format => true
   
