@@ -19,7 +19,7 @@ class RegistrationsController < ApplicationController
     @registration.user = current_user if current_user
 
     if @registration.save
-      @registration.create_and_login_user unless current_user
+      @registration.set_and_login_user unless current_user
       CodemocracyMailer.registered(@registration).deliver
       redirect_to(edit_registration_path(@registration), :notice => t(:"registration.create.flash.success"))
     else
