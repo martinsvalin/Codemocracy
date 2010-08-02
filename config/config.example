@@ -6,6 +6,8 @@ development:
   user_name: 'user@example.com'
   password: 'secret_password'
   secret_token: 'you_should_generate_a_random_string_of_alphanumeric_characters_and_put_here'
+  rpx_api_key: 'get_this_from_janrain'
+  rpx_app_name: 'your_rpx_app_name'
 
 test:
   domain: 'example.com'
@@ -19,3 +21,5 @@ production:
   user_name: 'user@example.com'
   password: 'secret_password'
   secret_token: 'you_should_generate_a_random_string_of_alphanumeric_characters_and_put_here'
+  rpx_api_key: 'get_this_from_janrain'
+  rpx_app_name: 'your_rpx_app_name'

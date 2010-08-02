@@ -10,6 +10,8 @@ gem 'rails', '3.0.0.beta4'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml'
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+gem 'rpx_now'
+gem 'authlogic_rpx'
 
 group :development, :test do
   gem "rspec-rails", ">= 2.0.0.beta.17"
