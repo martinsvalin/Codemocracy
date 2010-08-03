@@ -1,18 +1,10 @@
-%p
-  You can send for a login link
+%p Log in with RPX
+!= rpx_embed :app_name => CONFIG['rpx_app_name'], :return_url => login_url
+
+%p Or send for a login link
 = form_tag password_resets_path do
   %p
     %label Email
     = email_field_tag "email"
   %p
     = submit_tag "Send login link"
-
-
-= form_for @user_session, :url => login_path do |f|
-  = render :partial => 'layouts/form_errors', :locals => { :errors => @user_session.errors } if @user_session.errors.any?
-
-  .field
-    = f.label :email
-    = f.text_field :email
-  .action
-    = f.submit "Login"

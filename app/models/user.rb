@@ -6,8 +6,10 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true #, :email_format => true
   
   acts_as_authentic do |c|
-    c.login_field = :email          # email is the login field
-    c. validate_login_field = false # There is no login field, so don't validate it
+    c.login_field = :email
+    c.validate_login_field = false
+    c.account_mapping_mode :auto
+    c.account_merge_enabled true
   end
   
   def deliver_password_reset_instructions!  

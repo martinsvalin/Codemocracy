@@ -1,7 +1,8 @@
 %p#login_area
   - if current_user
     Logged in as 
-    = current_user.name + "."
+    = current_user.try(:name).to_s + ","
+    = current_user.try(:email).to_s + "."
     %small
     = link_to 'Log out', logout_path, :method => :delete
   - else

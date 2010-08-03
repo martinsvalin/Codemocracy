@@ -3,33 +3,26 @@ class UserSessionController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => :destroy
 
-  # GET /login
-  # GET /login.xml
-  def new
-    @user_session = UserSession.new
-
-    respond_to do |format|
-      format.html # new.html.haml
-      format.xml  { render :xml => @user_session }
-    end
+  def index
+    redirect_to current_user ? root_url : login_url
   end
 
-  # POST /login
-  # POST /login.xml
+  def new
+    @user_session = UserSession.new
+  end
+
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      redirect_to root_path, :format => params[:format]
+      redirect_to root_path
     else
-      render :action => 'new', :format => params[:format]
+      render :action => 'new'
     end
   end
 
-  # DELETE /logout
-  # DELETE /logout.xml
   def destroy
     @user_session = UserSession.find
     @user_session.destroy
-    redirect_to root_path, :format => params[:format]
+    redirect_to root_path
   end
 end

@@ -5,11 +5,12 @@ Codemocracy::Application.routes.draw do |map|
   get     'users/new(.:format)'      => 'users#new',          :as => :new_user
   put     'users/:id(.:format)'      => 'users#update',       :as => :user
   get     'users/:id/edit(.:format)' => 'users#edit',         :as => :edit_user
+  post    'addrpxauth'               => 'users#addrpxauth',   :as => :addrpxauth
 
   # UserSession
-  get     'login(.:format)'     => 'user_session#new',        :as => :login
-  post    'login(.:format)'     => 'user_session#create',     :as => :login
-  delete  'logout(.:format)'    => 'user_session#destroy',    :as => :logout
+  get     'login'   => 'user_session#new',        :as => :login
+  post    'login'   => 'user_session#create',     :as => :login
+  delete  'logout'  => 'user_session#destroy',    :as => :logout
 
   # Request login
   get     'email_login'         => 'password_resets#new',     :as => :password_resets
