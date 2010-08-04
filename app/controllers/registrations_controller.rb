@@ -1,9 +1,10 @@
 # encoding: UTF-8
 class RegistrationsController < ApplicationController
-  before_filter :set_active_nav, :only => [:index, :new, :edit]
+  before_filter :set_active_nav, :only => [:show, :new, :edit,]
 
-  def index
-    @registrations = Registration.all
+  def show
+    @registration = Registration.find(params[:id])
+    render :action => :edit
   end
 
   def new

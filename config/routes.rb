@@ -1,11 +1,7 @@
 Codemocracy::Application.routes.draw do |map|
   # User
-  # resources :users, :only => [:new, :edit, :create, :update]
-  post    'users(.:format)'          => 'users#create',       :as => :users
-  get     'users/new(.:format)'      => 'users#new',          :as => :new_user
-  put     'users/:id(.:format)'      => 'users#update',       :as => :user
-  get     'users/:id/edit(.:format)' => 'users#edit',         :as => :edit_user
-  post    'addrpxauth'               => 'users#addrpxauth',   :as => :addrpxauth
+  resources :users, :except => [:index, :destroy]
+  post    'add_rpx_auth'     => 'users#add_rpx_auth',   :as => :add_rpx_auth
 
   # UserSession
   get     'login'   => 'user_session#new',        :as => :login
@@ -23,11 +19,7 @@ Codemocracy::Application.routes.draw do |map|
   get     'about'   => 'info#about',    :as => :about
 
   # Registration
-  # resources :registrations, :only => [:new, :edit, :create, :update]
-  post    'registrations(.:format)'          => 'registrations#create',     :as => :registrations
-  get     'registrations/new(.:format)'      => 'registrations#new',        :as => :new_registration
-  put     'registrations/:id(.:format)'      => 'registrations#update',     :as => :registration
-  get     'registrations/:id/edit(.:format)' => 'registrations#edit',       :as => :edit_registration
+  resources :registrations, :except => [:index, :destroy]
   get     'register'                         => 'registrations#new',        :as => :register
 
   root    :to => 'registrations#new'
