@@ -194,14 +194,14 @@ input.submit {
 	width: 16em;
 	float: left;
 }
-#registration .explanation {
+#registration .explanation, #user #registrations {
 	width: 16em;
 	float: right;
 	margin: 0;
 }
 
-#details .personal_information { float: left; width: 16em; margin-right: 1em;}
-#details .team_information { float: right; width: 16em; margin-left: 1em;}
+.personal_information { float: left; width: 16em; margin-right: 1em;}
+.team_information { float: right; width: 16em; margin-left: 1em;}
 
 .inspiration.item p.by { font-size: 10pt; }
 .inspiration.item img, .inspiration p.by { width: 500px; height: auto; }

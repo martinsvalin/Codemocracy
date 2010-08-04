@@ -1,3 +1,8 @@
-%h2 Editing user
+#user.section
+  %h2 Profile
+  = render 'registrations'
+  
+  = render 'form'
+  
+  != rpx_popup( :link_text => "Choose a login", :app_name => CONFIG["rpx_app_name"], :return_url => add_rpx_auth_url, :add_rpx => true, :unobtrusive => false )
 
-= render 'form'

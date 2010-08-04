@@ -64,7 +64,7 @@ sv:
       header:
         will_you_hack: "Tänker du hacka? Berätta!"
         about_you: "Om dig"
-        about_team_and_idea: "Om ditt lag och din idé"
+        about_team_and_idea: "Om laget och idén"
     create:
       flash:
         success: 'Du är nu registrerad.'
