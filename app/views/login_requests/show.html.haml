@@ -1,0 +1,9 @@
+%h2 Is this you?
+%p 
+  Are you
+  = @user.name + "?"
+%p
+  Click the button to log in.
+%p
+  = button_to("Login", {:action => :update}, :method => :put)
+  

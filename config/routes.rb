@@ -13,10 +13,10 @@ Codemocracy::Application.routes.draw do |map|
   delete  'logout'  => 'user_session#destroy',    :as => :logout
 
   # Request login
-  get     'email_login'         => 'password_resets#new',     :as => :password_resets
-  post    'email_login'         => 'password_resets#create',  :as => :password_resets
-  put     'email_login/:id'     => 'password_resets#update',  :as => :password_reset
-  get     'email_login/:id'     => 'password_resets#show',    :as => :password_reset
+  get     'email_login'         => 'login_requests#new',     :as => :login_requests
+  post    'email_login'         => 'login_requests#create',  :as => :login_requests
+  put     'email_login/:id'     => 'login_requests#update',  :as => :login_request
+  get     'email_login/:id'     => 'login_requests#show',    :as => :login_request
 
   # Info
   get     'program' => 'info#program',  :as => :program

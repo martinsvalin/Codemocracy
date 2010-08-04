@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
     c.account_merge_enabled true
   end
   
-  def deliver_password_reset_instructions!  
+  def deliver_login_instructions!  
     reset_perishable_token!  
     CodemocracyMailer.email_login(self).deliver  
   end

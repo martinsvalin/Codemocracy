@@ -2,7 +2,7 @@
 != rpx_embed :app_name => CONFIG['rpx_app_name'], :return_url => login_url
 
 %p Or send for a login link
-= form_tag password_resets_path do
+= form_tag login_requests_path do
   %p
     %label Email
     = email_field_tag "email"
