@@ -6,11 +6,11 @@ class LoginRequestsController < ApplicationController
   end
 
   def show
-    find_user_by_token_or_redirect_to_root
+    update
   end
 
   def update
-    find_user_by_token_or_redirect_to_root
+    find_user_by_token_or_redirect
     @user.login!
     flash[:notice] = "Welcome #{@user.name}. You are now logged in."
     redirect_to root_url
@@ -21,7 +21,7 @@ class LoginRequestsController < ApplicationController
     if @user  
       @user.deliver_login_instructions!  
       flash[:notice] = "A login link has been emailed to you.<br />Please check your email.".html_safe
-      redirect_to root_url  
+      redirect_to root_url
     else  
       flash[:notice] = "No such email address could be found"  
       render :action => :new  
@@ -29,7 +29,7 @@ class LoginRequestsController < ApplicationController
   end
   
   private
-    def find_user_by_token_or_redirect_to_root
+    def find_user_by_token_or_redirect
       @user = User.find_using_perishable_token(params[:id])
       unless @user
         flash[:notice] = "Sorry, could not log you in"
