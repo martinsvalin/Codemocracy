@@ -13,6 +13,7 @@ class RegistrationsController < ApplicationController
 
   def edit
     @registration = Registration.find(params[:id])
+    require_owner
   end
 
   def create
@@ -30,6 +31,7 @@ class RegistrationsController < ApplicationController
 
   def update
     @registration = Registration.find(params[:id])
+    require_owner
 
     if @registration.update_attributes(params[:registration])
       redirect_to(edit_registration_path(@registration), :notice => t(:"registration.update.flash.success"))
@@ -41,5 +43,14 @@ class RegistrationsController < ApplicationController
   private
     def set_active_nav
       @active_nav = 'register'
+    end
+
+    def require_owner
+      unless current_user == @registration.user
+        store_location
+        flash[:notice] = "You must be logged in to access #{session[:return_to]}"
+        redirect_to login_url
+        return false
+      end
     end
 end
