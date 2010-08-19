@@ -1,12 +1,12 @@
 #registrations
   - if @user.registrations && @user.registrations.count == 1
     - if @user.email == @user.registrations.first.email
-      You are registered
+      Du är anmäld
     - else
-      You registered
+      Du anmälde
       = @user.registrations.first.name
   - elsif @user.registrations && @user.registrations.count > 1
-    You have registered:
+    Du anmälde:
     %ul
       - @user.registrations.each do |registered|
         %li= registered.name

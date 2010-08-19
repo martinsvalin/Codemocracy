@@ -1,14 +1,12 @@
 %p#login_area
   - if current_user
-    Logged in as 
+    Inloggad som 
     = link_to user_path(current_user) do
       = current_user.try(:name).to_s
       = "(#{current_user.try(:email)})"
     &mdash;
     %small
-    = link_to 'Log out', logout_path, :method => :delete
+    = link_to 'Logga ut', logout_path, :method => :delete
   - else
-    Already registered? You can
-    = link_to 'log in', login_path
-    or
-    = link_to 'request login', login_requests_path
+    Redan registrerad? Du kan
+    = link_to 'skicka efter en inloggning', login_requests_path

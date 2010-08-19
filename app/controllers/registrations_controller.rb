@@ -47,8 +47,12 @@ class RegistrationsController < ApplicationController
 
     def require_owner
       unless current_user == @registration.user
-        store_location
-        flash[:notice] = "You must be logged in to access #{session[:return_to]}"
+        store_location¨
+        if current_user
+          flash[:notice] = "Du har inte behörighet till #{session[:return_to]}"        
+        else
+          flash[:notice] = "Du måste vara inloggad för att kunna nå #{session[:return_to]}"
+        end
         redirect_to login_url
         return false
       end

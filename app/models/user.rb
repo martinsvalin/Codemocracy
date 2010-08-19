@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   acts_as_authentic do |c|
     c.login_field = :email
     c.validate_login_field = false
-    c.account_mapping_mode :auto
-    c.account_merge_enabled true
+    # c.account_mapping_mode :auto
+    # c.account_merge_enabled true
   end
   
   def deliver_login_instructions!  

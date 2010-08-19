@@ -1,0 +1,8 @@
+%p Om du redan är registrerad kan du skicka efter en engångsinloggning till e-postadressen du anmälde dig med.
+
+= form_tag login_requests_path do
+  %p
+    %label E-post
+    = email_field_tag "email"
+  %p
+    = submit_tag "Skicka"
