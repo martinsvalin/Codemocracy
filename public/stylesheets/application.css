@@ -4,7 +4,7 @@ html,
 body { 
 	background-color: #EADDD5;
 	margin: 0; padding: 0;
-	font-family: Nobile, Helvetica, Arial, serif;
+	font-family: sans-serif;
 	font-size: 18pt;
 	line-height: 24pt;
 	height: 100%;
@@ -124,9 +124,9 @@ nav li {
 	background-color: #EADDD5;
 	display: inline;
 	padding: 3px 1.5em 7px 1.5em;
-	-webkit-border-radius: 5px 5px 0 0;
-	-mozilla-border-radius: 5px 5px 0 0;
 	border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
 	font-size: 12pt;
 	line-height: 14pt;
 	font-weight: bold;
@@ -169,7 +169,7 @@ p#login_area {
 	border: 1px dashed gray;
 	border-radius: 8px;
 	-webkit-border-radius: 8px;
-	-mozilla-border-radius: 8px;
+	-moz-border-radius: 8px;
 }
 .flash.notice { background-color: #afa; }
 .flash.error { background-color: #faa; }
