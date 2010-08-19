@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update_attributes(params[:user])
-      redirect_to(edit_user_path(@user), :notice => 'Profile updated.')
+      redirect_to(edit_user_path(@user), :notice => 'Ändringar sparade.')
     else
       render :action => :edit
     end
