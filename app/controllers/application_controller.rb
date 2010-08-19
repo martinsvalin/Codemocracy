@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     def require_user
       unless current_user
         store_location
-        flash[:notice] = "Du måste vara inloggad för att nå #{session[:return_to]}"
+        flash[:alert] = "Du måste vara inloggad för att nå #{session[:return_to]}"
         redirect_to login_url
         return false
       end
@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
     def require_no_user
       if current_user
         store_location
-        flash[:notice] = "Du är redan inloggad. " + 
+        flash[:alert] = "Du är redan inloggad. " + 
           help.link_to("Logga ut?", logout_path, :method => :delete)
         redirect_to root_url
         return false

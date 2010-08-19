@@ -1,4 +1,4 @@
 - unless flash[:notice].blank?
   %p.flash.notice= flash[:notice].html_safe
-- unless flash[:error].blank?
-  %p.flash.error= flash[:error].html_safe
+- unless flash[:alert].blank?
+  %p.flash.alert= flash[:alert].html_safe

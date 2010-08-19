@@ -172,7 +172,7 @@ p#login_area {
 	-moz-border-radius: 8px;
 }
 .flash.notice { background-color: #afa; }
-.flash.error { background-color: #faa; }
+.flash.alert { background-color: #faa; }
 
 .section, div.item {
 	margin: 0;
