@@ -4,16 +4,16 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
   %body
     %p 
-      Hi,
+      Hej,
     %p
-      You requested a login to Codemocracy. Click the link below to log in.
-      Note that you can only use this link once.
+      Du kan logga in på Codemocracy med länken nedan.
+      Länken fungerar bara en gång.
     %p= link_to(@url, @url)
     %p
-      If you did not request a login, you can simply ignore this message.
+      Om du inte skickat efter en inloggningslänk kan du ignorera det här meddelandet.
     %p
-      Contact 
+      Kontakta 
       = mail_to(@contact_email)
-      if you have any questions.
-    %p Best regards,
-    %p - The Codemocracy team
+      om du har några frågor.
+    %p Vänliga hälningar,
+    %p - Codemocracy-gänget

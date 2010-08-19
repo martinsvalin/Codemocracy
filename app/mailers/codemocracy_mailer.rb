@@ -18,7 +18,7 @@ class CodemocracyMailer < ActionMailer::Base
     @url = login_request_url(@user.perishable_token)
     mail(
       :to => user.email,
-      :subject => "Login for Codemocracy"
+      :subject => "Inloggning till Codemocracy"
     )
   end
 end
