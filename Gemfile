@@ -19,6 +19,7 @@ end
 
 group :development do
   gem 'rails3-generators'
+  gem 'heroku'
 end
 
 group :test do
