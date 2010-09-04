@@ -22,5 +22,5 @@ Codemocracy::Application.routes.draw do |map|
   resources :registrations, :except => [:index, :destroy]
   get     'register'    => 'registrations#new', :as => :register
 
-  root    :to => 'registrations#new'
+  root    :to => 'info#home'
 end
