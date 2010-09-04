@@ -216,6 +216,8 @@ input.submit {
 
 table { border-spacing: 10pt; }
 
+#twtr-widget-1 { float: right; }
+
 /*	FOOTER
 -------------- */
 #footer {

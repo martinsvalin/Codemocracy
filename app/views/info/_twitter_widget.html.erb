@@ -1,0 +1,34 @@
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+  new TWTR.Widget({
+    version: 2,
+    type: 'search',
+    search: '#codemocracy',
+    interval: 6000,
+    title: '#codemocracy',
+    subject: '',
+    width: 250,
+    height: 300,
+    theme: {
+      shell: {
+        background: '#D4501F',
+        color: '#ffffff'
+      },
+      tweets: {
+        background: '#ffffff',
+        color: '#444444',
+        links: '#D4501F'
+      }
+    },
+    features: {
+      scrollbar: false,
+      loop: true,
+      live: true,
+      hashtags: true,
+      timestamp: true,
+      avatars: true,
+      toptweets: true,
+      behavior: 'default'
+    }
+  }).render().start();
+</script>
