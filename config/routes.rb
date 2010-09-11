@@ -1,4 +1,7 @@
 Codemocracy::Application.routes.draw do |map|
+  get 'projects' => 'projects#index', :as => :projects
+  match 'projects/:action' => "projects"
+
   # User
   resources :users, :only => [:show, :edit, :update]
   # post    'add_rpx_auth'     => 'users#add_rpx_auth',   :as => :add_rpx_auth
@@ -22,5 +25,5 @@ Codemocracy::Application.routes.draw do |map|
   resources :registrations, :except => [:index, :destroy]
   get     'register'    => 'registrations#new', :as => :register
 
-  root    :to => 'info#home'
+  root    :to => 'projects#index'
 end

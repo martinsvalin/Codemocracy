@@ -11,7 +11,7 @@
       = render :partial => "layouts/nav"
     #wrapper
       #content
-        = render :partial => "layouts/login_area"
+        =# render :partial => "layouts/login_area"
 
         = render :partial => "layouts/flash", :locals => { :flash => flash } if flash.any?
         = yield
@@ -19,5 +19,5 @@
         .clear &nbsp;
 
       #footer
-        != render :partial => "layouts/sponsors"
+        = render :partial => "layouts/sponsors"
     = render :partial => "layouts/footer_scripts"
