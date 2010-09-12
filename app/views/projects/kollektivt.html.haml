@@ -13,7 +13,7 @@
     <a href="http://inuseful.se/popdevelops-realtidskarta-for-bussar-vann-pa-forsta-codemocracy">text och 
     film på bloggen inuseful</a>.
   
-  %p.movie
+  .movie
     %object{ :width => "640", :height => "385" }
       %param{ :name => "movie", :value => "http://www.youtube.com/v/KDc7oUMUNC0&rel=0&border=1&color1=0xb1b1b1&color2=0xd0d0d0&hl=sv_SE&feature=player_embedded&fs=1" }
       %param{ :name => "allowFullScreen", :value => "true" }
@@ -24,12 +24,18 @@
         :allowScriptAccess => "always", 
         :width => "640", 
         :height => "385"}
+    %p
+      %a{:href => "http://inuseful.se/popdevelops-realtidskarta-for-bussar-vann-pa-forsta-codemocracy"}
+        Pelle Sten intervjuar Popdevelop om Kollektivt.se
   
-  %p.screenshot.image
+  .screenshot.image
     %a{ :href => "http://kollektivt.se" }
       %img{ :src => "http://farm5.static.flickr.com/4154/4978590571_f2b4af3a63_z.jpg",
         :alt => "Skärmavbild av Kollektivt.se" }
-  %p.image
-    %img{ :src => "http://farm5.static.flickr.com/4096/4961169782_d135a0c1a6_z.jpg",
-      :alt => "Foto från presentationen av Kollektivt.se" }
+      %p Kollektivt.se
+  .image
+    %a{:href => "http://bambuser.com/channel/modul1/broadcast/1000781"}
+      %img{ :src => "http://farm5.static.flickr.com/4096/4961169782_d135a0c1a6_z.jpg",
+        :alt => "Foto från presentationen av Kollektivt.se" }
+      %p Johan, Joel, Johan och Sebastian presenterar
 

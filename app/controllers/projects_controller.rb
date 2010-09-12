@@ -41,16 +41,16 @@ class ProjectsController < ApplicationController
   
   def crime_tracker
     @previous = {:action => :boreda_at_codemocracy, :text => "Boreda @ Codemocracy"}
-    @next = {:action => :taginfo, :text => "Tåginfo Android-app"}
+    @next = {:action => :tagtider, :text => "Tågtider till Android"}
   end
   
-  def taginfo
+  def tagtider
     @previous = {:action => :crime_tracker, :text => "CrimeTracker"}
     @next = {:action => :riksdagen_i_ply, :text => "Riksdagen i Ply"}
   end
   
   def riksdagen_i_ply
-    @previous = {:action => :taginfo, :text => "Tåginfo Android-app"}
+    @previous = {:action => :tagtider, :text => "Tågtider till Android"}
     @next = {:action => :georapport, :text => "Georapport"}
   end
   

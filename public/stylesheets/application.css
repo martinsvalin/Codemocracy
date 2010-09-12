@@ -32,6 +32,7 @@ blockquote {
 	font-size: 14pt;
 }
 
+
 .clear { clear: both;}
 .nobr { white-space: nowrap; }
 
@@ -227,7 +228,8 @@ table { border-spacing: 10pt; }
 	top: -1.5em;
 }
 
-.image img, .movie object { border: 1em solid white; margin: 0.5em;}
+.image img, .movie object { border: 1em solid white; margin: 0.5em; }
+.image p, .movie p { font-size: 75%; margin: 0 0 3em 0;}
 .image, .movie { text-align: center; font-size: 75%; line-height: 75%; }
 
 /*	FOOTER
