@@ -1,30 +1,18 @@
 source 'http://rubygems.org'
 
-# Rails 3.0.0.rc depends on bundler 1.0.0.rc.1, which is not available on Heroku as of 2010-07-27
-gem 'rails', '3.0.0.beta4'
+gem 'rails', '3.1.0.rc4'
 
-# Heroku needs to be loaded for `rake heroku:config` to run, but it causes json_pure to be loaded twice.
-# Uncomment this line if you need to run `rake heroku:config`.
-# gem 'heroku'
+# Bundle edge Rails instead:
+# gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'haml'
-gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
-gem 'rpx_now'
-gem 'authlogic_rpx'
+gem 'sqlite3'
 
-group :development, :test do
-  gem "rspec-rails", ">= 2.0.0.beta.17"
-end
+# Asset template engines
+gem 'sass-rails', "~> 3.1.0.rc"
+gem 'coffee-script'
+gem 'uglifier'
 
-group :development do
-  gem 'rails3-generators'
-  gem 'heroku'
-end
-
-group :test do
-  gem 'factory_girl_rails'
-end
+gem 'jquery-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -33,16 +21,6 @@ end
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug'
+# gem 'ruby-debug19', :require => 'ruby-debug'
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri', '1.4.1'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
-
-# Bundle gems for certain environments:
-# gem 'rspec', :group => :test
-# group :test do
-#   gem 'webrat'
-# end
+gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
