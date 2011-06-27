@@ -1,6 +1,0 @@
-#projects_nav
-  %span.previous
-    = link_to "&laquo; #{@previous[:text]}".html_safe, "/projects/#{@previous[:action]}" unless @previous.blank?
-  %span.back= link_to "Tillbaka till listan", projects_path
-  %span.next 
-    = link_to "#{@next[:text]} &raquo;".html_safe, "/projects/#{@next[:action]}" unless @next.blank?

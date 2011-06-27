@@ -1,8 +1,0 @@
-%nav
-  %ul
-    %li{:class => ("selected" if (@active_nav == 'home'))}<
-      = link_to_unless_current("Hem", root_path)
-    %li{:class => ("selected" if (@active_nav == 'program'))}<
-      = link_to_unless_current(t(:'layout.nav.program'), program_path)
-    %li{:class => ("selected" if (@active_nav == 'about'))}<
-      = link_to_unless_current(t(:'layout.nav.about').html_safe, about_path)
