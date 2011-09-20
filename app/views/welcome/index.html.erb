@@ -9,6 +9,12 @@
   Anmäl dig till Codemocracy 2011! Boka in 3-4 september.
 </p>
 
+<% flash.each do |type, message| %>
+  <div class="flash <%= type %>">
+    <p><%= message %></p>
+  </div>
+<% end %>
+
 <%= form_for @user do |f| %>
   <% f.text_field :email, :placeholder => "E-post" %>
 <% end %>
