@@ -9,9 +9,9 @@
   Anmäl dig till Codemocracy 2011! Boka in 3-4 september.
 </p>
 
-<form>
-  <input type="email" placeholder="e-post" />
-</form>
+<%= form_for @user do |f| %>
+  <% f.text_field :email, :placeholder => "E-post" %>
+<% end %>
 
 <ul>
   <li><img src="http://farm5.static.flickr.com/4108/4960552205_f8e570cc2b.jpg" alt="Lagen presenterar sina verk" /></li>
