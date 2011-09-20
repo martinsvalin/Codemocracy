@@ -12,7 +12,11 @@
 <section>
   <p>lorem lalala lololo</p>
   <%= form_for @user do |f| %>
-    <% f.text_field :email, :placeholder => "E-post" %>
+    <%= f.text_field :email, :placeholder => "E-post" %>
+    <div>
+      <%= f.submit "Jag vill hacka" %>
+      <%= f.submit "Jag vill kolla" %>
+    </div>
   <% end %>
 
   <ul>
